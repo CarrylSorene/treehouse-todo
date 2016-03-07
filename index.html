@@ -9,38 +9,14 @@
 <body ng-app="todoListApp">
 
   <h1>ToDo List</h1>
-    
-    <div ng-controller="mainCtrl" class="list">
-
-      <div class="add">
-        <a href="" ng-click="addTodo()">+ Add a New Task</a>
-      </div>
-
-      <div class="item" ng-class="{'editing-item': editing, 'edited': todo.edited, 'completed': todo.completed}" 
-      ng-repeat="todo in todos | orderBy: 'completed'" ng-init="todo.completed = false">
-        <input ng-model="todo.completed" type="checkbox"/>
-        <span ng-click="todo.completed = !todo.completed; todo-edited = true"></span>
-        <label ng-hide="editing">{{todo.name}}</label>
-        <!-- blur only needs false since it only fires in that direction-->
-        <input ng-change="todo.edited = true" ng-blur="editing = false;" ng-show="editing" ng-model="todo.name" class="editing-label" type="text"/>
-
-        <div class="actions">
-        <!-- toggle on click, set it to the opposite-->
-          <a href="" ng-click="editing = !editing">Edit</a>
-          <a href="" ng-click="saveTodo(todo)">Save</a>
-          <a href="" ng-click="deleteTodo(todo, $index)" class="delete">Delete</a>
-        <!-- anchor tags empty so they don't trigger page navigation-->
-        </div>
-
-      </div>
-      <!-- check they're accessible
-        {{todos}} -->
-    </div>
+  
+  <todos></todos>
 
 <script src="vendor/angular.min.js" type="text/javascript"></script>
 <script src="scripts/app.js" type="text/javascript"></script>
 <script src="scripts/controllers/main.js" type="text/javascript"></script>
 <script src="scripts/services/data.js" type="text/javascript"></script>
-  
+  <script src="scripts/directives/todos.js" type="text/javascript"></script>
+
 </body>
 </html>
