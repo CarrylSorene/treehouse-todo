@@ -12,7 +12,7 @@
 
   <h1>ToDo List</h1>
     
-    <div class="item" ng-class="{"editing-item": editing, "edited": todo.edited}" ng-repeat="todo in todos">
+    <div class="item" ng-class="{'editing-item': editing, 'edited': todo.edited}" ng-repeat="todo in todos">
 
       <input ng-model="todo.completed" type="checkbox"/>
       <label ng-hide="editing" class="editing-label">{{todo.name}}</label>
@@ -22,7 +22,7 @@
       <div class="actions">
       <!-- toggle on click, set it to the opposite-->
         <a href="" ng-click="editing = !editing">Edit</a>
-        <a href="" ng-click="">Save</a>
+        <a href="" ng-click="helloConsole()">Save</a>
         <a href="" class="delete">Delete</a>
       <!-- anchor tags empty so they don't trigger page navigation-->
       </div>
