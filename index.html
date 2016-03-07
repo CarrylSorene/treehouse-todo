@@ -22,8 +22,8 @@
       <div class="actions">
       <!-- toggle on click, set it to the opposite-->
         <a href="" ng-click="editing = !editing">Edit</a>
-        <a href="" ng-click="helloConsole()">Save</a>
-        <a href="" class="delete">Delete</a>
+        <a href="" ng-click="saveTodo(todo)">Save</a>
+        <a href="" ng-click="deleteTodo(todo, $index)" class="delete">Delete</a>
       <!-- anchor tags empty so they don't trigger page navigation-->
       </div>
     </div>
