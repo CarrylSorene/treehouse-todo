@@ -12,11 +12,12 @@
 
   <h1>ToDo List</h1>
     
-    <div ng-repeat="todo in todos">
+    <div class="item" ng-class="editing-item": editing}" ng-repeat="todo in todos">
 
       <input ng-model="todo.completed" type="checkbox"/>
       <label ng-hide="editing" class="editing-label">{{todo.name}}</label>
-      <input ng-show="editing" ng-model="todo.name" class="editing-label" type="text"/>
+      <!-- blur only needs false since it only fires in that direction-->
+      <input ng-blur="editing = false" ng-show="editing" ng-model="todo.name" class="editing-label" type="text"/>
 
       <div class="actions">
       <!-- toggle on click, set it to the opposite-->
